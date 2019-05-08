@@ -35,7 +35,7 @@ public class Raven {
             rtnStr = "Really! Why, tell me more!";
         } else if
                 (negativeCounter == positiveCounter) {
-            rtnStr = "Mey!";
+            rtnStr = "Meh!";
         }
 
         return rtnStr;

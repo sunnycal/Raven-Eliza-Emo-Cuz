@@ -9,16 +9,27 @@ public class Main {
 //    private static ArrayList<String> conversation = new ArrayList<>();
 
     public static void main(String[] args) {
+        int response_counter=0;
         Scanner scan = new Scanner(System.in);
 
         Raven r1 = new Raven();
+        Invoice i1 = new Invoice();
+
+        int question_counter=0;
+        int session_counter=0;
 
         String[] str;
 //        ArrayList<String>conversation = new ArrayList<>();
 //        for (int x=0; x < conversation.size(); x++){
 //            conversation.add();
 //        }
-
+        System.out.println("Please enter your personal contact information");
+        System.out.println("NAME:");
+        i1.setName(scan.nextLine());
+        System.out.println("please enter your house number and street name: ");
+        i1.setAddress_line_1(scan.nextLine());
+        System.out.println("please enter your city, state, and zip code: ");
+        i1.setAddress_line_2(scan.nextLine());
         System.out.println("Good morning, how are you today?");
 
         boolean quit = false;
@@ -42,6 +53,8 @@ public class Main {
             } else {
 //                r1.getResponse(str);
                 System.out.println(r1.getResponse(str));
+                question_counter++;
+                session_counter=1;
 //                for (int i = 0; i < str.length; i++) {
 //                    if ((str[i].equalsIgnoreCase("good")) || (str[i].equalsIgnoreCase("glad")) ||
 //                            str[i].equalsIgnoreCase("happy") || (str[i].equalsIgnoreCase("relaxed")
@@ -72,6 +85,10 @@ public class Main {
 //        }
 //                System.out.println(conversation);
             }
+
         }
+
+        i1.getDescription(question_counter, session_counter);
+
     }
 }
